@@ -18,7 +18,9 @@
  */
 package de.uni_passau.fim.se2.litterbox.analytics;
 
+import de.uni_passau.fim.se2.litterbox.ast.model.ASTNode;
 import de.uni_passau.fim.se2.litterbox.ast.model.Program;
+import de.uni_passau.fim.se2.litterbox.ast.visitor.ScratchVisitor;
 import de.uni_passau.fim.se2.litterbox.jsoncreation.JSONFileCreator;
 import de.uni_passau.fim.se2.litterbox.report.CSVReportGenerator;
 import de.uni_passau.fim.se2.litterbox.report.CommentGenerator;
@@ -67,6 +69,18 @@ public class BugAnalyzer extends Analyzer {
     void check(File fileEntry, String reportFileName) {
         issueFinders = IssueTool.getFinders(detectors);
         Program program = extractProgram(fileEntry);
+        System.out.println(program.getScratchBlocks());
+        ScratchVisitor sv = new ScratchVisitor() {
+            @Override
+            public void visit(ASTNode node) {
+                System.out.println("---");
+                System.out.println(node.getOpcode());
+                System.out.println(node.getUniqueName());
+                System.out.println(node);
+                ScratchVisitor.super.visit(node);
+            }
+        };
+        program.accept(sv);
         if (program == null) {
             // Todo error message
             return;

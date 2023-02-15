@@ -141,7 +141,7 @@ public abstract class Analyzer {
         } catch (ParsingException e) {
             log.severe("Could not parse program for file " + fileEntry.getName() + ". " + e.getMessage());
         } catch (RuntimeException e) {
-            log.severe("Could not parse program for file " + fileEntry.getName() + ".");
+            log.severe("Could not parse program for file " + fileEntry.getName() + "." + e);
         }
         return program;
     }
