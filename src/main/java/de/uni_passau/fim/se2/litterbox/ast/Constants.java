@@ -278,6 +278,7 @@ public class Constants {
     public static final String ROTATIONX_KEY = "rotationCenterX";
     public static final String ROTATIONY_KEY = "rotationCenterY";
     public static final String RATE_KEY = "rate";
+    public static final String RATE_KEY_CAP = "RATE";
     public static final String SAMPLE_COUNT_KEY = "sampleCount";
     public static final String HAS_NEXT_KEY = "hasnext";
     public static final String ID_KEY = "id";
@@ -334,4 +335,6 @@ public class Constants {
     public static final String NUMBER_KEY = "NUMBER";
     public static final String NUMBER1_KEY = "NUMBER1";
     public static final String NUMBER2_KEY = "NUMBER2";
+    public static final String UNITS_KEY_CAPS = "UNITS";
+    public static final String SPIN_DIRECTIONS_KEY_CAPS = "SPIN_DIRECTIONS";
 }

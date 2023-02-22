@@ -32,6 +32,11 @@ import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.attributes.AttributeFromFixed;
 import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.attributes.AttributeFromVariable;
 import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.attributes.FixedAttribute;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Forward;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Left;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Reverse;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Right;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.unit.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.pen.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.texttospeech.SetLanguage;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.texttospeech.SetVoice;
@@ -70,6 +75,7 @@ import de.uni_passau.fim.se2.litterbox.ast.model.statement.actorlook.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.statement.actorsound.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.statement.common.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.statement.control.*;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.statements.movement.SpikeMovementDirectionForDuration;
 import de.uni_passau.fim.se2.litterbox.ast.model.statement.declaration.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.statement.list.*;
 import de.uni_passau.fim.se2.litterbox.ast.model.statement.spritelook.*;
@@ -5340,5 +5346,146 @@ public class CloneVisitor {
      */
     public ASTNode visit(StopAllSounds2 node) {
         return new StopAllSounds2(apply(node.getMetadata()));
+    }
+
+    // CS2N nodes
+
+    /**
+     * Default implementation of visit method for {@link SpikeMovementDirectionForDuration}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node SpikeMovementDirectionForDuration  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(SpikeMovementDirectionForDuration node) {
+        return new SpikeMovementDirectionForDuration(apply(node.getDirection()), apply(node.getRate()), apply(node.getUnit()), apply(node.getMetadata()));
+    }
+    /**
+     * Default implementation of visit method for {@link Cm}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Cm  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Cm node) {
+        return new Cm();
+    }
+
+    /**
+     * Default implementation of visit method for {@link Inches}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Inches  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Inches node) {
+        return new Inches();
+    }
+
+    /**
+     * Default implementation of visit method for {@link Rotations}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Rotations  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Rotations node) {
+        return new Rotations();
+    }
+
+    /**
+     * Default implementation of visit method for {@link Degrees}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Degrees  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Degrees node) {
+        return new Degrees();
+    }
+
+    /**
+     * Default implementation of visit method for {@link Seconds}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Seconds  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Seconds node) {
+        return new Seconds();
+    }
+
+    /**
+     * Default implementation of visit method for {@link Forward}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Forward  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Forward node) {
+        return new Forward(apply(node.getMetadata()));
+    }
+
+    /**
+     * Default implementation of visit method for {@link Right}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Right  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Right node) {
+        return new Right(apply(node.getMetadata()));
+    }
+
+    /**
+     * Default implementation of visit method for {@link Left}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Left  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Left node) {
+        return new Left(apply(node.getMetadata()));
+    }
+
+    /**
+     * Default implementation of visit method for {@link Reverse}.
+     *
+     * <p>
+     * Creates a deep copy of this node.
+     * </p>
+     *
+     * @param node Reverse  Node which will be copied
+     * @return the copy of the visited node
+     */
+    public ASTNode visit(Reverse node) {
+        return new Reverse(apply(node.getMetadata()));
     }
 }

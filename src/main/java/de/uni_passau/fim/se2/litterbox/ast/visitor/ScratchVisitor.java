@@ -33,6 +33,12 @@ import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.attributes.At
 import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.attributes.AttributeFromVariable;
 import de.uni_passau.fim.se2.litterbox.ast.model.expression.string.attributes.FixedAttribute;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.ExtensionBlock;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Forward;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Left;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Reverse;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.inputs.spindirection.Right;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.expression.unit.*;
+import de.uni_passau.fim.se2.litterbox.ast.model.extensions.cs2n.statements.movement.SpikeMovementDirectionForDuration;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.mblock.MBlockNode;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.pen.PenStmt;
 import de.uni_passau.fim.se2.litterbox.ast.model.extensions.texttospeech.TextToSpeechBlock;
@@ -3446,5 +3452,146 @@ public interface ScratchVisitor {
         } else {
             visitDefaultVisitor(node);
         }
+    }
+
+    //CS2N nodes
+    /**
+     * Default implementation of visit method for {@link SpikeMovementDirectionForDuration}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node SpikeMovementDirectionForDuration Node of which the children will
+     *             be iterated
+     */
+    default void visit(SpikeMovementDirectionForDuration node) {
+        visit((Stmt) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Cm}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Cm Node of which the children will
+     *             be iterated
+     */
+    default void visit(Cm node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Inches}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Inches Node of which the children will
+     *             be iterated
+     */
+    default void visit(Inches node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Rotations}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Rotations Node of which the children will
+     *             be iterated
+     */
+    default void visit(Rotations node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Degrees}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Degrees Node of which the children will
+     *             be iterated
+     */
+    default void visit(Degrees node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Seconds}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Seconds Node of which the children will
+     *             be iterated
+     */
+    default void visit(Seconds node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Forward}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Forward Node of which the children will
+     *             be iterated
+     */
+    default void visit(Forward node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Right}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Right Node of which the children will
+     *             be iterated
+     */
+    default void visit(Right node) {
+        visit((ElementChoice)node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Left}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Left Node of which the children will
+     *             be iterated
+     */
+    default void visit(Left node) {
+        visit((ElementChoice) node);
+    }
+
+    /**
+     * Default implementation of visit method for {@link Reverse}.
+     *
+     * <p>
+     * Iterates all children of this node without performing any action.
+     * </p>
+     *
+     * @param node Reverse Node of which the children will
+     *             be iterated
+     */
+    default void visit(Reverse node) {
+        visit((ElementChoice) node);
     }
 }
